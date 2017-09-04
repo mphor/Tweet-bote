@@ -5,9 +5,10 @@ Created on Mon Sep  4 16:23:07 2017
 @author: mojod
 """
 
-	
+
 import random
 import tweepy
+import time
 
 consumer_key='L3MsyCOoqgSPc4jzZV8wero0d'
 consumer_secret='ZCOI3x1f8GZ9c2cJ8kPYyyBW4gRX4MJBbyHijGE1UObnAow6ka'
@@ -20,10 +21,8 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 f = open("speech.txt")
-sentence = f.read().split('.')
-status = random.choice(sentence) + "."
-
-print(status)
-
-api.update_status(status)
-f.close
+while True:
+    sentence = f.read().split('.')
+    status = random.choice(sentence) + "."
+    api.update_status(status)
+    time.sleep(3600)
