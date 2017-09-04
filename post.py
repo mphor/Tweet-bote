@@ -8,7 +8,7 @@ Created on Mon Sep  4 16:23:07 2017
 
 import random
 import tweepy
-import time
+
 
 consumer_key='L3MsyCOoqgSPc4jzZV8wero0d'
 consumer_secret='ZCOI3x1f8GZ9c2cJ8kPYyyBW4gRX4MJBbyHijGE1UObnAow6ka'
