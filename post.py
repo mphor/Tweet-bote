@@ -22,15 +22,23 @@ api = tweepy.API(auth)
 
 f = open("speech.txt")
 while True:
+
     raw = api.user_timeline(user_id = 'robo_skellington', count = 1, page = 1)
+    #get text from json of recent post
     for status in raw:
         format_status = status.text
+    #get random quote from txt file
     sentence = f.read().split('.')
     status = random.choice(sentence) + '.'
+    #make sure quote is within size for twitter post
     if len(status) > 140:
         status=random.choice(sentence)+'.'
+    #make sure quote is not the same as previous post
     elif format_status == status:
         status=random.choice(sentence)+'.'
+    #make status post
     else:
         api.update_status(status)
+        print('New Post')
+    #wait 1 hour between next post
     time.sleep(3600)
