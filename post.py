@@ -8,7 +8,7 @@ Created on Mon Sep  4 16:23:07 2017
 
 import random
 import tweepy
-
+import time
 
 consumer_key='L3MsyCOoqgSPc4jzZV8wero0d'
 consumer_secret='ZCOI3x1f8GZ9c2cJ8kPYyyBW4gRX4MJBbyHijGE1UObnAow6ka'
@@ -22,7 +22,15 @@ api = tweepy.API(auth)
 
 f = open("speech.txt")
 while True:
+    raw = api.user_timeline(user_id = 'robo_skellington', count = 1, page = 1)
+    for status in raw:
+        format_status = status.text
     sentence = f.read().split('.')
-    status = random.choice(sentence) + "."
-    api.update_status(status)
+    status = random.choice(sentence) + '.'
+    if len(status) > 140:
+        status=random.choice(sentence)+'.'
+    elif format_status == status:
+        status=random.choice(sentence)+'.'
+    else:
+        api.update_status(status)
     time.sleep(3600)
