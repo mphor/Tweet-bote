@@ -1,1 +1,1 @@
-web: python post.py
+worker: python post.py
