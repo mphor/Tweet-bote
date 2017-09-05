@@ -45,7 +45,7 @@ def post_func():
         print('Error! Trying again')
         ######
     #make status post
-    #api.update_status(status)
+    api.update_status(status)
     print('New Post')
 
 var = 1
