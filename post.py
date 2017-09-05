@@ -51,4 +51,4 @@ def post_func():
 var = 1
 while var == 1 :
     post_func()
-    time.sleep(5)
+    time.sleep(1800)
