@@ -60,4 +60,4 @@ while True:
     print('success')
     print(get_sentence.status)
     api.update_status(get_sentence.status)
-    time.sleep(1800)
+    time.sleep(7200)
