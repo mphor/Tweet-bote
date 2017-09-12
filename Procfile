@@ -1,2 +1,1 @@
-worker: python post.py
-urgentworker: python test.py
+worker: python post.py & python test.py
