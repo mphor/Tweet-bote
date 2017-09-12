@@ -17,10 +17,10 @@ def get_sent():
     text_model = markovify.Text(f, retain_original=True)
     get_sent.sent = text_model.make_short_sentence(140)
     get_sent.hash = ' #' + get_sent.sent
-    print(get_sent.hash)
 
 
 while True:
     get_sent()
-    #api.update_status(get_sent.hash)
-    time.sleep(1)
+    print(get_sent.hash)
+    api.update_status(get_sent.hash)
+    time.sleep(3600)
