@@ -1,2 +1,2 @@
 worker: python post.py
-clock: python test.py
+urgentworker: python test.py
