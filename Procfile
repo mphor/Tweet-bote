@@ -1,1 +1,1 @@
-worker: python post.py & python test.py
+worker: python post.py & python tests.py
